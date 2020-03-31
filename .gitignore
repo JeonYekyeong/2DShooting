@@ -11,7 +11,7 @@
 2DShooting/[Mm]emoryCaptures/
 
 *.png
-Sprite/
+Sprites/
 
 # Asset meta data should only be ignored when the corresponding asset is also ignored
 !2DShooting/[Aa]ssets/**/*.meta
