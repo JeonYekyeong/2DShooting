@@ -6,7 +6,6 @@ public class PlanetMove : MonoBehaviour
 {
     Rigidbody2D target_rb;
     public float speed = 5.0f;
-    
 
     // Start is called before the first frame update
     void Start()
@@ -27,5 +26,9 @@ public class PlanetMove : MonoBehaviour
         }
     }
 
-    
+    // 플레이어와 충돌하면 행성 삭제
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        Destroy(gameObject);
+    }
 }

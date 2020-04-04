@@ -9,9 +9,6 @@ public class PlayerController : MonoBehaviour
     // speed
     public float speed = 10.0f;
 
-    // 충돌을 위한 행성 오브젝트
-    public GameObject planet;
-
     // 좌우로 움직이기
     // 행성과 일정횟수만큼 충돌할 경우 GameOver
     // 코인 획득하면 피버타임
@@ -47,9 +44,4 @@ public class PlayerController : MonoBehaviour
         player_rb.velocity = new Vector2(0, vertical) * speed;
     }
 
-    // 행성과 충돌하면 행성 삭제
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        Destroy(planet);
-    }
 }
