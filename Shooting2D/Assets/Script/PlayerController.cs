@@ -11,7 +11,8 @@ public class PlayerController : MonoBehaviour
 
     // 좌우로 움직이기
     // 행성과 일정횟수만큼 충돌할 경우 GameOver
-    // 코인 획득하면 피버타임
+    // 포인트
+    public static int POINT;
 
     // Start is called before the first frame update
     void Start()

@@ -4,16 +4,19 @@ using UnityEngine;
 
 public class BumbGenerator : MonoBehaviour
 {
+    // prefab을 플레이어의 위치에서 생성하는 스크립트
+
     // prefab
     public GameObject bumb;
 
     // player 위치
     public GameObject player;
 
-    // Start is called before the first frame update
-    void Start()
+    AudioSource audio;
+
+    private void Start()
     {
-        
+        this.audio = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -25,6 +28,9 @@ public class BumbGenerator : MonoBehaviour
         {
             GameObject bObj = Instantiate(bumb) as GameObject;
             bObj.transform.position = new Vector2(playerPos.x - 1.5f, playerPos.y);
+
+            // 생성되는 순간 던지는 오디오 재생
+            audio.Play();
         }
     }
 }
