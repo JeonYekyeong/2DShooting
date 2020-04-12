@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -13,6 +14,9 @@ public class PlayerController : MonoBehaviour
     // 행성과 일정횟수만큼 충돌할 경우 GameOver
     // 포인트
     public static int POINT;
+
+    // count = 0 일때 gameover
+    public static int COUNT = 3;
 
     // Start is called before the first frame update
     void Start()
@@ -43,6 +47,16 @@ public class PlayerController : MonoBehaviour
         transform.position = pos;
 
         player_rb.velocity = new Vector2(0, vertical) * speed;
+
+        if (PlayerController.COUNT == 0)
+        {
+            SceneManager.LoadScene("GameOver");
+        }
     }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        COUNT -= 1;
+
+    }
 }
